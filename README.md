@@ -162,7 +162,7 @@ open hak-cipta-wanzz.html
 
 ```
 hak-cipta/
-└── hak-cipta-wanzz.html    # Single file — semua CSS, SVG, JS di dalam
+└── index.html    # Single file — semua CSS, SVG, JS di dalam
 ```
 
 ---
