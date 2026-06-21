@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hak Cipta © Wanzz — Sertifikat Perlindungan Karya Digital</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23080808'/%3E%3Crect x='1' y='1' width='62' height='62' rx='11' fill='none' stroke='%23C9973A' stroke-width='1.5'/%3E%3C!-- timbangan --%3E%3Cline x1='32' y1='10' x2='32' y2='54' stroke='%23C9973A' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='12' y1='15' x2='52' y2='15' stroke='%23C9973A' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='12' y1='15' x2='19' y2='34' stroke='%23C9973A' stroke-width='2'/%3E%3Cline x1='52' y1='15' x2='45' y2='34' stroke='%23C9973A' stroke-width='2'/%3E%3Cpath d='M11 34 Q19 44 27 34' stroke='%23C9973A' stroke-width='2' fill='none'/%3E%3Cpath d='M37 34 Q45 44 53 34' stroke='%23C9973A' stroke-width='2' fill='none'/%3E%3Cline x1='22' y1='54' x2='42' y2='54' stroke='%23C9973A' stroke-width='2.5' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='15' r='2.5' fill='%23F4C842'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold-bright:   #F4C842;
+    --gold-mid:      #C9973A;
+    --gold-deep:     #8B6914;
+    --gold-muted:    #6B5020;
+    --black-true:    #000000;
+    --black-rich:    #080808;
+    --black-card:    #0D0D0D;
+    --black-surface: #131313;
+    --black-border:  #1A1A1A;
+    --white-soft:    #E8DFC8;
+    --white-dim:     #9A8E78;
+    --white-faint:   #3A3228;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black-rich);
+    color: var(--white-soft);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── AMBIENT BG ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 40% at 50% 0%, rgba(196,150,42,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 30% at 100% 100%, rgba(196,150,42,0.05) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── GOLD LINE ── */
+  .gold-rule {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-mid), var(--gold-bright), var(--gold-mid), transparent);
+    border: none;
+    margin: 0;
+  }
+  .gold-rule-sm {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 10%, var(--gold-muted) 50%, transparent 90%);
+    border: none;
+    margin: 12px 0;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 64px 24px 48px;
+    background: linear-gradient(180deg, #050505 0%, transparent 100%);
+  }
+
+  .seal-wrap {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 32px;
+  }
+  .seal-outer {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 2px solid var(--gold-mid);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    animation: rotateSeal 30s linear infinite;
+  }
+  .seal-outer::before {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border-radius: 50%;
+    border: 1px solid var(--gold-muted);
+  }
+  .seal-inner {
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 35%, #2a1f08, #0a0800);
+    border: 1px solid var(--gold-mid);
+    display: flex; align-items: center; justify-content: center;
+    animation: rotateSeal 30s linear reverse infinite;
+    font-size: 28px;
+  }
+  .seal-text {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .seal-text svg {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+  }
+  .seal-text textPath {
+    font-family: 'Cinzel', serif;
+    font-size: 8.5px;
+    fill: var(--gold-mid);
+    letter-spacing: 2px;
+  }
+  @keyframes rotateSeal { to { transform: rotate(360deg); } }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--gold-mid);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.15;
+    background: linear-gradient(135deg, var(--gold-mid) 0%, var(--gold-bright) 40%, var(--gold-mid) 70%, #A07820 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 12px;
+  }
+
+  .tagline {
+    font-size: 15px;
+    font-style: italic;
+    color: var(--white-dim);
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+
+  .meta-line {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--gold-muted);
+    letter-spacing: 2px;
+    margin-top: 16px;
+  }
+
+  /* ── CERT CARD ── */
+  .cert-card {
+    position: relative;
+    z-index: 5;
+    max-width: 860px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+  }
+
+  .cert-box {
+    background: var(--black-card);
+    border: 1px solid var(--gold-muted);
+    position: relative;
+    padding: 48px 56px;
+  }
+  /* Corner ornaments */
+  .cert-box::before, .cert-box::after {
+    content: '';
+    position: absolute;
+    width: 24px; height: 24px;
+    border-color: var(--gold-mid);
+    border-style: solid;
+  }
+  .cert-box::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+  .cert-box::after  { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+
+  .cert-box-inner::before, .cert-box-inner::after {
+    content: '';
+    position: absolute;
+    width: 24px; height: 24px;
+    border-color: var(--gold-mid);
+    border-style: solid;
+  }
+  .cert-box-inner::before { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
+  .cert-box-inner::after  { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
+
+  .cert-title-line {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .cert-title-line .c-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 5px;
+    color: var(--gold-mid);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .cert-title-line h2 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(20px, 3vw, 30px);
+    font-weight: 600;
+    color: var(--gold-bright);
+    letter-spacing: 1px;
+  }
+
+  .owner-block {
+    text-align: center;
+    margin: 32px 0;
+    padding: 24px;
+    background: linear-gradient(135deg, rgba(196,150,42,0.06), rgba(196,150,42,0.02));
+    border-top: 1px solid var(--gold-muted);
+    border-bottom: 1px solid var(--gold-muted);
+  }
+  .owner-block .lbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--white-dim);
+    margin-bottom: 6px;
+  }
+  .owner-name {
+    font-family: 'Cinzel', serif;
+    font-size: 32px;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--gold-mid), var(--gold-bright), var(--gold-mid));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 4px;
+  }
+  .owner-sub {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--white-dim);
+    margin-top: 4px;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    position: relative;
+    z-index: 5;
+    max-width: 860px;
+    margin: 0 auto 52px;
+    padding: 0 20px;
+  }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: var(--gold-mid);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold-muted), transparent);
+  }
+
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(16px, 2.5vw, 22px);
+    font-weight: 600;
+    color: var(--gold-bright);
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── POINTS GRID ── */
+  .points-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  @media(max-width: 600px) { .points-grid { grid-template-columns: 1fr; } }
+
+  .point-card {
+    background: var(--black-surface);
+    border: 1px solid var(--black-border);
+    border-left: 2px solid var(--gold-muted);
+    padding: 16px 18px;
+    transition: border-left-color 0.2s, background 0.2s;
+    position: relative;
+  }
+  .point-card:hover {
+    border-left-color: var(--gold-bright);
+    background: #161208;
+  }
+
+  .point-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--gold-mid);
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+  }
+  .point-title {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gold-bright);
+    margin-bottom: 4px;
+    letter-spacing: 0.3px;
+  }
+  .point-desc {
+    font-size: 13px;
+    color: var(--white-dim);
+    line-height: 1.5;
+  }
+  .point-ref {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--gold-muted);
+    margin-top: 6px;
+  }
+
+  /* ── LEGAL BADGE ── */
+  .legal-basis {
+    background: var(--black-card);
+    border: 1px solid var(--gold-muted);
+    padding: 36px 48px;
+    position: relative;
+  }
+  .legal-basis::before {
+    content: '§';
+    position: absolute;
+    top: -20px; left: 50%; transform: translateX(-50%);
+    font-family: 'Cinzel', serif;
+    font-size: 28px;
+    color: var(--gold-mid);
+    background: var(--black-card);
+    padding: 0 16px;
+    line-height: 1;
+  }
+
+  .law-list {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+  }
+  .law-list li {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    gap: 12px;
+    align-items: start;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--black-border);
+  }
+  .law-list li:last-child { border-bottom: none; }
+  .law-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--gold-mid);
+    padding-top: 2px;
+  }
+  .law-text strong {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    color: var(--gold-bright);
+    display: block;
+    margin-bottom: 2px;
+    letter-spacing: 0.3px;
+  }
+  .law-text span {
+    font-size: 13px;
+    color: var(--white-dim);
+  }
+
+  /* ── PENALTIES ── */
+  .penalty-strip {
+    background: linear-gradient(135deg, #0D0600, #100800);
+    border: 1px solid #2A1800;
+    border-left: 3px solid var(--gold-mid);
+    padding: 20px 24px;
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .penalty-icon {
+    font-size: 28px;
+    text-align: center;
+  }
+  .penalty-title {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    color: var(--gold-bright);
+    margin-bottom: 2px;
+  }
+  .penalty-text { font-size: 13px; color: var(--white-dim); }
+
+  /* ── NOTICE BOX ── */
+  .notice-final {
+    background: linear-gradient(135deg, rgba(196,150,42,0.08), rgba(196,150,42,0.03));
+    border: 1px solid var(--gold-muted);
+    padding: 32px 40px;
+    text-align: center;
+  }
+  .notice-final p {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--white-dim);
+    line-height: 1.8;
+  }
+  .notice-final p strong {
+    font-style: normal;
+    color: var(--gold-bright);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    padding: 48px 24px 40px;
+  }
+  .footer-seal {
+    font-family: 'Cinzel', serif;
+    font-size: 26px;
+    color: var(--gold-mid);
+    margin-bottom: 8px;
+  }
+  .footer-name {
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    letter-spacing: 6px;
+    background: linear-gradient(90deg, var(--gold-mid), var(--gold-bright), var(--gold-mid));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 12px;
+  }
+  .footer-copy {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--gold-muted);
+    letter-spacing: 2px;
+  }
+
+  /* ── SCROLL FADE ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="seal-wrap">
+    <div class="seal-outer">
+      <svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 110 110">
+        <path id="circle-text" d="M 55,55 m -42,0 a 42,42 0 1,1 84,0 a 42,42 0 1,1 -84,0" fill="none"/>
+        <text><textPath href="#circle-text">HAK CIPTA TERLINDUNGI • WANZZ DIGITAL • 2025 •&nbsp;</textPath></text>
+      </svg>
+      <div class="seal-inner">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="38" height="38">
+        <line x1="24" y1="6" x2="24" y2="43" stroke="#C9973A" stroke-width="2" stroke-linecap="round"/>
+        <line x1="8" y1="9" x2="40" y2="9" stroke="#C9973A" stroke-width="2" stroke-linecap="round"/>
+        <line x1="8" y1="9" x2="14" y2="27" stroke="#C9973A" stroke-width="1.5"/>
+        <line x1="40" y1="9" x2="34" y2="27" stroke="#C9973A" stroke-width="1.5"/>
+        <path d="M9 27 Q14 35 19 27" stroke="#C9973A" stroke-width="1.5" fill="none"/>
+        <path d="M29 27 Q34 35 39 27" stroke="#C9973A" stroke-width="1.5" fill="none"/>
+        <line x1="17" y1="43" x2="31" y2="43" stroke="#C9973A" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="24" cy="9" r="2" fill="#C9973A"/>
+      </svg>
+    </div>
+    </div>
+  </div>
+
+  <div class="eyebrow">Sertifikat Perlindungan Karya Digital</div>
+  <h1>Hak Cipta<br>Wanzz</h1>
+  <p class="tagline">Dilindungi Penuh oleh Hukum Republik Indonesia</p>
+  <hr class="gold-rule" style="max-width:320px;margin:20px auto;">
+  <div class="meta-line">UU No. 28 Tahun 2014 &nbsp;·&nbsp; UUD 1945 Pasal 28C &nbsp;·&nbsp; WIPO Copyright Treaty</div>
+</header>
+
+<div class="gold-rule"></div>
+
+<!-- CERTIFICATE CARD -->
+<div class="cert-card fade-in" style="margin-top:60px;">
+  <div class="cert-box cert-box-inner">
+    <div class="cert-title-line">
+      <span class="c-label">Dengan ini dinyatakan bahwa</span>
+      <h2>Seluruh Karya Digital di Bawah Ini</h2>
+    </div>
+    <hr class="gold-rule-sm">
+
+    <div class="owner-block">
+      <div class="lbl">PEMILIK TUNGGAL HAK CIPTA</div>
+      <div class="owner-name">W A N Z Z</div>
+      <div class="owner-sub">Kreator &amp; Pemilik Karya Digital — Indonesia</div>
+    </div>
+
+    <hr class="gold-rule-sm">
+    <p style="text-align:center;font-size:14px;font-style:italic;color:var(--white-dim);line-height:1.9;">
+      Semua karya digital termasuk kode sumber, bot, skrip, desain antarmuka, konten, nama, merek,
+      dan sistem perangkat lunak yang diciptakan oleh <strong style="color:var(--gold-bright);font-style:normal;">Wanzz</strong>
+      merupakan ciptaan orisinal yang dilindungi hukum sejak saat pertama kali diwujudkan
+      dalam bentuk nyata, tanpa perlu pendaftaran terlebih dahulu.
+    </p>
+    <div style="text-align:center;margin-top:24px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--gold-muted);letter-spacing:3px;">
+        REG-ID: WZZ-2025-©-DIGITAL &nbsp;|&nbsp; BERLAKU SEUMUR HIDUP + 70 TAHUN
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION: 50 POIN HAK CIPTA -->
+<div class="section fade-in">
+  <div class="section-label">Perlindungan Hukum Lengkap</div>
+  <div class="section-title">50 Poin Hak Cipta yang Terlindungi Penuh</div>
+
+  <div class="points-grid">
+
+    <!-- 01–10 -->
+    <div class="point-card">
+      <div class="point-num">01</div>
+      <div class="point-title">Kode Sumber Bot WhatsApp</div>
+      <div class="point-desc">Seluruh kode sumber bot WA, termasuk logika, modul, dan algoritma.</div>
+      <div class="point-ref">UU 28/2014 Ps. 40(1)(s)</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">02</div>
+      <div class="point-title">Skrip Otomasi & Bot Telegram</div>
+      <div class="point-desc">Skrip bot Telegram termasuk handler command, inline keyboard, dan alur logika.</div>
+      <div class="point-ref">UU 28/2014 Ps. 40(1)(s)</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">03</div>
+      <div class="point-title">Desain Antarmuka Dashboard</div>
+      <div class="point-desc">Tata letak, warna, tipografi, dan elemen visual panel kontrol.</div>
+      <div class="point-ref">UU 28/2014 Ps. 40(1)(f)</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">04</div>
+      <div class="point-title">Animasi & Efek Visual</div>
+      <div class="point-desc">Partikel animasi, intro video loading, dan efek antarmuka orisinal.</div>
+      <div class="point-ref">UU 28/2014 Ps. 40(1)(b)</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">05</div>
+      <div class="point-title">Nama & Merek "Wanzz"</div>
+      <div class="point-desc">Identitas merek, nama pengguna, dan branding kreator digital.</div>
+      <div class="point-ref">UU 20/2016 (Merek), UU 28/2014</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">06</div>
+      <div class="point-title">Arsitektur Sistem Perangkat Lunak</div>
+      <div class="point-desc">Struktur folder, konfigurasi deployment, dan desain arsitektur sistem.</div>
+      <div class="point-ref">UU 28/2014 Ps. 40(1)(s)</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">07</div>
+      <div class="point-title">Konten Teks & Dokumentasi</div>
+      <div class="point-desc">Seluruh teks panduan, README, komentar kode, dan dokumentasi teknis.</div>
+      <div class="point-ref">UU 28/2014 Ps. 40(1)(a)</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">08</div>
+      <div class="point-title">Struktur Database & Skema</div>
+      <div class="point-desc">Skema penyimpanan data, format JSON/konfigurasi, dan model data.</div>
+      <div class="point-ref">UU 28/2014 Ps. 40(1)(s)</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">09</div>
+      <div class="point-title">Karya Sastra Digital</div>
+      <div class="point-desc">Semua tulisan, postingan, teks konten yang dipublikasikan secara digital.</div>
+      <div class="point-ref">UU 28/2014 Ps. 40(1)(a)</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">10</div>
+      <div class="point-title">Karya Fotografi Digital</div>
+      <div class="point-desc">Foto, tangkapan layar, dan gambar orisinal yang dibuat atau diedit.</div>
+      <div class="point-ref">UU 28/2014 Ps. 40(1)(k)</div>
+    </div>
+
+    <!-- 11–20 -->
+    <div class="point-card">
+      <div class="point-num">11</div>
+      <div class="point-title">Karya Sinematografi & Video</div>
+      <div class="point-desc">Konten video, tutorial, dan rekaman layar yang dibuat secara orisinal.</div>
+      <div class="point-ref">UU 28/2014 Ps. 40(1)(m)</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">12</div>
+      <div class="point-title">Ekspresi Budaya Digital</div>
+      <div class="point-desc">Konten yang merupakan ekspresi kreativitas personal di media digital.</div>
+      <div class="point-ref">UU 28/2014 Ps. 38</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">13</div>
+      <div class="point-title">Nama Domain & Identitas Online</div>
+      <div class="point-desc">Nama akun, handle, dan identitas digital di berbagai platform.</div>
+      <div class="point-ref">UU 11/2008 ITE, UU 28/2014</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">14</div>
+      <div class="point-title">Hak Moral Pengakuan Penciptaan</div>
+      <div class="point-desc">Hak untuk diakui sebagai pencipta atas seluruh karya yang dibuat.</div>
+      <div class="point-ref">UU 28/2014 Ps. 5(1)(a)</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">15</div>
+      <div class="point-title">Hak Moral Integritas Karya</div>
+      <div class="point-desc">Hak melarang modifikasi yang merusak kehormatan atau reputasi pencipta.</div>
+      <div class="point-ref">UU 28/2014 Ps. 5(1)(e)</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">16</div>
+      <div class="point-title">Hak Reproduksi Karya</div>
+      <div class="point-desc">Hak eksklusif untuk menggandakan karya dalam bentuk apapun.</div>
+      <div class="point-ref">UU 28/2014 Ps. 9(1)(a)</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">17</div>
+      <div class="point-title">Hak Distribusi & Penyebaran</div>
+      <div class="point-desc">Hak eksklusif mendistribusikan salinan karya kepada publik.</div>
+      <div class="point-ref">UU 28/2014 Ps. 9(1)(e)</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">18</div>
+      <div class="point-title">Hak Pengumuman Publik</div>
+      <div class="point-desc">Hak eksklusif mengumumkan karya kepada publik melalui media apapun.</div>
+      <div class="point-ref">UU 28/2014 Ps. 9(1)(b)</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">19</div>
+      <div class="point-title">Hak Terjemahan & Adaptasi</div>
+      <div class="point-desc">Hak eksklusif menerjemahkan atau mengadaptasi karya ke bentuk lain.</div>
+      <div class="point-ref">UU 28/2014 Ps. 9(1)(c)</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">20</div>
+      <div class="point-title">Hak Transformasi & Modifikasi</div>
+      <div class="point-desc">Hak eksklusif mengubah, memodifikasi, dan membuat karya turunan.</div>
+      <div class="point-ref">UU 28/2014 Ps. 9(1)(d)</div>
+    </div>
+
+    <!-- 21–30 -->
+    <div class="point-card">
+      <div class="point-num">21</div>
+      <div class="point-title">Hak Pertunjukan & Komunikasi</div>
+      <div class="point-desc">Hak eksklusif mengkomunikasikan karya secara langsung maupun digital.</div>
+      <div class="point-ref">UU 28/2014 Ps. 9(1)(f)</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">22</div>
+      <div class="point-title">Hak Penyewaan Karya</div>
+      <div class="point-desc">Hak eksklusif menyewakan karya atau salinannya kepada pihak ketiga.</div>
+      <div class="point-ref">UU 28/2014 Ps. 9(1)(g)</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">23</div>
+      <div class="point-title">Hak Lisensi & Sublisensing</div>
+      <div class="point-desc">Hak memberikan lisensi penggunaan karya kepada pihak lain atas syarat tertentu.</div>
+      <div class="point-ref">UU 28/2014 Ps. 80</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">24</div>
+      <div class="point-title">Perlindungan Karya Anonim</div>
+      <div class="point-desc">Karya yang dipublikasikan tanpa nama tetap dilindungi oleh hukum.</div>
+      <div class="point-ref">UU 28/2014 Ps. 57</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">25</div>
+      <div class="point-title">Perlindungan Karya Belum Dipublikasi</div>
+      <div class="point-desc">Karya yang belum dirilis ke publik tetap mendapat perlindungan hukum penuh.</div>
+      <div class="point-ref">UU 28/2014 Ps. 57(2)</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">26</div>
+      <div class="point-title">Hak Penarikan Karya dari Peredaran</div>
+      <div class="point-desc">Hak menarik kembali karya yang sudah dipublikasikan dari peredaran publik.</div>
+      <div class="point-ref">UU 28/2014 Ps. 5(1)(d)</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">27</div>
+      <div class="point-title">Perlindungan Informasi Manajemen Hak</div>
+      <div class="point-desc">Larangan menghapus atau memanipulasi informasi hak cipta yang tertanam pada karya.</div>
+      <div class="point-ref">UU 28/2014 Ps. 52</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">28</div>
+      <div class="point-title">Perlindungan Tindakan Proteksi Digital</div>
+      <div class="point-desc">Larangan pembajakan, bypass proteksi teknis, dan keamanan DRM karya digital.</div>
+      <div class="point-ref">UU 28/2014 Ps. 52–53</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">29</div>
+      <div class="point-title">Hak Cipta Karya Kompilasi</div>
+      <div class="point-desc">Perlindungan atas koleksi, kumpulan file, dan dataset yang disusun secara orisinal.</div>
+      <div class="point-ref">UU 28/2014 Ps. 40(1)(r)</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">30</div>
+      <div class="point-title">Hak Ekonomi Royalti</div>
+      <div class="point-desc">Hak mendapatkan royalti dari setiap penggunaan komersial karya oleh pihak lain.</div>
+      <div class="point-ref">UU 28/2014 Ps. 9(2)</div>
+    </div>
+
+    <!-- 31–40 -->
+    <div class="point-card">
+      <div class="point-num">31</div>
+      <div class="point-title">Konstitusional — Hak Berkreasi</div>
+      <div class="point-desc">Hak setiap warga negara untuk mengembangkan diri melalui karya budaya dan ilmu.</div>
+      <div class="point-ref">UUD 1945 Ps. 28C(1)</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">32</div>
+      <div class="point-title">Konstitusional — Perlindungan Hak Milik</div>
+      <div class="point-desc">Hak milik intelektual dilindungi negara dan tidak boleh diambil secara sewenang-wenang.</div>
+      <div class="point-ref">UUD 1945 Ps. 28H(4), Ps. 28G</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">33</div>
+      <div class="point-title">Konstitusional — Hak atas Pengakuan Hukum</div>
+      <div class="point-desc">Hak mendapat pengakuan, jaminan, perlindungan, dan kepastian hukum yang adil.</div>
+      <div class="point-ref">UUD 1945 Ps. 28D(1)</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">34</div>
+      <div class="point-title">Perlindungan Data Pribadi Pencipta</div>
+      <div class="point-desc">Identitas dan data pencipta dilindungi dari penyalahgunaan pihak ketiga.</div>
+      <div class="point-ref">UU 27/2022 (PDP), UU 11/2008</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">35</div>
+      <div class="point-title">Larangan Plagiarisme Digital</div>
+      <div class="point-desc">Melarang penyalinan, klaim kepemilikan, atau peniruan karya digital tanpa izin.</div>
+      <div class="point-ref">UU 28/2014 Ps. 112–113</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">36</div>
+      <div class="point-title">Perlindungan Terhadap Pencurian Identitas Digital</div>
+      <div class="point-desc">Melarang penggunaan nama, merek, atau identitas Wanzz oleh pihak tidak berwenang.</div>
+      <div class="point-ref">UU 11/2008 Ps. 28(1), UU 20/2016</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">37</div>
+      <div class="point-title">Perjanjian Internasional WIPO</div>
+      <div class="point-desc">Karya dilindungi di seluruh negara anggota WIPO melalui Berne Convention.</div>
+      <div class="point-ref">Berne Convention, WIPO Copyright Treaty</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">38</div>
+      <div class="point-title">Perlindungan TRIPS/WTO</div>
+      <div class="point-desc">Indonesia sebagai anggota WTO wajib menegakkan TRIPS Agreement dalam HKI.</div>
+      <div class="point-ref">TRIPS Agreement Ps. 9–14</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">39</div>
+      <div class="point-title">Hak Gugatan Perdata Pelanggaran</div>
+      <div class="point-desc">Pemilik hak cipta dapat menuntut ganti rugi atas kerugian akibat pelanggaran.</div>
+      <div class="point-ref">UU 28/2014 Ps. 96–100</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">40</div>
+      <div class="point-title">Penyelesaian Sengketa Arbitrase</div>
+      <div class="point-desc">Sengketa hak cipta dapat diselesaikan melalui arbitrase atau mediasi alternatif.</div>
+      <div class="point-ref">UU 28/2014 Ps. 95, UU 30/1999</div>
+    </div>
+
+    <!-- 41–50 -->
+    <div class="point-card">
+      <div class="point-num">41</div>
+      <div class="point-title">Masa Berlaku 70 Tahun Setelah Wafat</div>
+      <div class="point-desc">Perlindungan berlaku seumur hidup pencipta ditambah 70 tahun setelah wafat.</div>
+      <div class="point-ref">UU 28/2014 Ps. 58(1)</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">42</div>
+      <div class="point-title">Hak Waris & Pewarisan HKI</div>
+      <div class="point-desc">Hak cipta dapat diwariskan kepada ahli waris sesuai ketentuan hukum waris nasional.</div>
+      <div class="point-ref">UU 28/2014 Ps. 58–61</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">43</div>
+      <div class="point-title">Perlindungan Program Komputer</div>
+      <div class="point-desc">Program komputer dilindungi selama 50 tahun sejak pertama kali diumumkan.</div>
+      <div class="point-ref">UU 28/2014 Ps. 59(1)(a)</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">44</div>
+      <div class="point-title">Hak Cipta Melekat Otomatis</div>
+      <div class="point-desc">Perlindungan timbul otomatis saat karya diwujudkan, tanpa perlu pendaftaran.</div>
+      <div class="point-ref">UU 28/2014 Ps. 1(1), Berne Conv. Ps. 5(2)</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">45</div>
+      <div class="point-title">Pencatatan Sukarela Sebagai Bukti</div>
+      <div class="point-desc">Pencatatan di DJKI memperkuat kedudukan hukum sebagai bukti kepemilikan.</div>
+      <div class="point-ref">UU 28/2014 Ps. 64–73</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">46</div>
+      <div class="point-title">Perlindungan Penggunaan Wajar (Fair Use)</div>
+      <div class="point-desc">Pengecualian terbatas pada pendidikan non-komersial dan riset dengan atribusi jelas.</div>
+      <div class="point-ref">UU 28/2014 Ps. 43–51</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">47</div>
+      <div class="point-title">Hak Penegakan Hukum & Penyitaan</div>
+      <div class="point-desc">Aparat berwenang dapat menyita dan menghancurkan salinan bajakan atas perintah pengadilan.</div>
+      <div class="point-ref">UU 28/2014 Ps. 106–107</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">48</div>
+      <div class="point-title">Larangan Impor Karya Bajakan</div>
+      <div class="point-desc">Pelarangan impor barang atau konten digital yang melanggar hak cipta ke wilayah RI.</div>
+      <div class="point-ref">UU 28/2014 Ps. 9(2) & Ps. 113</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">49</div>
+      <div class="point-title">Tanggung Jawab Platform Digital</div>
+      <div class="point-desc">Platform digital wajib menindaklanjuti laporan pelanggaran hak cipta (notice & takedown).</div>
+      <div class="point-ref">UU 28/2014 Ps. 54–56, PP 71/2019</div>
+    </div>
+    <div class="point-card">
+      <div class="point-num">50</div>
+      <div class="point-title">Perlindungan Menyeluruh & Tidak Terbatas</div>
+      <div class="point-desc">Perlindungan mencakup semua bentuk karya yang belum ada maupun yang akan diciptakan di masa depan.</div>
+      <div class="point-ref">UU 28/2014 Ps. 40, Penjelasan Umum</div>
+    </div>
+
+  </div><!-- /points-grid -->
+</div><!-- /section -->
+
+<!-- SECTION: DASAR HUKUM -->
+<div class="section fade-in">
+  <div class="section-label">Landasan Konstitusional & Perundangan</div>
+  <div class="section-title">Dasar Hukum yang Berlaku</div>
+
+  <div class="legal-basis">
+    <ul class="law-list">
+      <li>
+        <div class="law-num">01</div>
+        <div class="law-text">
+          <strong>UUD 1945 — Pasal 28C, 28D, 28G, 28H</strong>
+          <span>Jaminan konstitusional atas hak mengembangkan diri, hak berkreasi, hak atas perlindungan hukum, dan hak milik pribadi setiap warga negara Indonesia.</span>
+        </div>
+      </li>
+      <li>
+        <div class="law-num">02</div>
+        <div class="law-text">
+          <strong>Undang-Undang No. 28 Tahun 2014 — Hak Cipta</strong>
+          <span>Undang-undang pokok perlindungan hak cipta di Indonesia. Mengatur hak ekonomi, hak moral, masa berlaku, pelanggaran, dan sanksi pidana maupun perdata.</span>
+        </div>
+      </li>
+      <li>
+        <div class="law-num">03</div>
+        <div class="law-text">
+          <strong>Undang-Undang No. 11 Tahun 2008 jo. UU No. 19 Tahun 2016 — ITE</strong>
+          <span>Perlindungan informasi dan transaksi elektronik, melarang akses ilegal, manipulasi, atau penyebaran konten digital tanpa hak.</span>
+        </div>
+      </li>
+      <li>
+        <div class="law-num">04</div>
+        <div class="law-text">
+          <strong>Undang-Undang No. 20 Tahun 2016 — Merek & Indikasi Geografis</strong>
+          <span>Perlindungan merek dagang, nama usaha, dan identitas visual yang digunakan dalam kegiatan komersial.</span>
+        </div>
+      </li>
+      <li>
+        <div class="law-num">05</div>
+        <div class="law-text">
+          <strong>Undang-Undang No. 27 Tahun 2022 — Perlindungan Data Pribadi</strong>
+          <span>Melindungi data pribadi pencipta dari pengumpulan, penyalahgunaan, dan penyebaran tanpa persetujuan.</span>
+        </div>
+      </li>
+      <li>
+        <div class="law-num">06</div>
+        <div class="law-text">
+          <strong>Berne Convention for the Protection of Literary & Artistic Works</strong>
+          <span>Perjanjian internasional yang diratifikasi Indonesia, memberikan perlindungan karya secara otomatis di 180+ negara anggota.</span>
+        </div>
+      </li>
+      <li>
+        <div class="law-num">07</div>
+        <div class="law-text">
+          <strong>WIPO Copyright Treaty (WCT) 1996</strong>
+          <span>Perjanjian WIPO yang mengatur perlindungan karya digital dan program komputer di era internet global.</span>
+        </div>
+      </li>
+      <li>
+        <div class="law-num">08</div>
+        <div class="law-text">
+          <strong>TRIPS Agreement — WTO</strong>
+          <span>Standar minimum perlindungan HKI internasional yang mengikat seluruh anggota Organisasi Perdagangan Dunia termasuk Indonesia.</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- SECTION: SANKSI -->
+<div class="section fade-in">
+  <div class="section-label">Konsekuensi Hukum Pelanggaran</div>
+  <div class="section-title">Sanksi bagi Pelanggar Hak Cipta</div>
+
+  <div class="penalty-strip">
+    <div class="penalty-icon">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+        <line x1="20" y1="4" x2="20" y2="36" stroke="#C9973A" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="6" y1="7" x2="34" y2="7" stroke="#C9973A" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="6" y1="7" x2="11" y2="20" stroke="#C9973A" stroke-width="1.2"/>
+        <line x1="34" y1="7" x2="29" y2="20" stroke="#C9973A" stroke-width="1.2"/>
+        <path d="M7 20 Q11 27 15 20" stroke="#C9973A" stroke-width="1.2" fill="none"/>
+        <path d="M25 20 Q29 27 33 20" stroke="#C9973A" stroke-width="1.2" fill="none"/>
+        <line x1="14" y1="36" x2="26" y2="36" stroke="#C9973A" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="20" cy="7" r="1.5" fill="#C9973A"/>
+      </svg>
+    </div>
+    <div>
+      <div class="penalty-title">Pidana Penjara hingga 10 Tahun</div>
+      <div class="penalty-text">Pelanggaran hak ekonomi untuk penggunaan komersial diancam pidana penjara paling lama 10 (sepuluh) tahun.</div>
+    </div>
+  </div>
+  <div class="penalty-strip">
+    <div class="penalty-icon">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+        <circle cx="20" cy="20" r="14" stroke="#C9973A" stroke-width="1.5"/>
+        <circle cx="20" cy="20" r="10" stroke="#C9973A" stroke-width="0.7" stroke-dasharray="2 1.5"/>
+        <text x="20" y="26" text-anchor="middle" font-family="serif" font-size="12" fill="#C9973A" font-weight="700">Rp</text>
+      </svg>
+    </div>
+    <div>
+      <div class="penalty-title">Denda hingga Rp 4 Miliar</div>
+      <div class="penalty-text">Denda pidana hingga Rp 4.000.000.000 (empat miliar rupiah) bagi pelanggar hak cipta secara komersial.</div>
+    </div>
+  </div>
+  <div class="penalty-strip">
+    <div class="penalty-icon">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+        <rect x="4" y="34" width="32" height="2.5" rx="0.5" fill="#C9973A"/>
+        <rect x="6" y="12" width="28" height="2" rx="0.5" fill="#C9973A"/>
+        <rect x="8" y="14" width="3" height="20" rx="0.3" fill="#C9973A" opacity="0.75"/>
+        <rect x="13" y="14" width="3" height="20" rx="0.3" fill="#C9973A" opacity="0.75"/>
+        <rect x="18" y="14" width="4" height="20" rx="0.3" fill="#C9973A" opacity="0.75"/>
+        <rect x="24" y="14" width="3" height="20" rx="0.3" fill="#C9973A" opacity="0.75"/>
+        <rect x="29" y="14" width="3" height="20" rx="0.3" fill="#C9973A" opacity="0.75"/>
+        <polygon points="20,4 5,12 35,12" fill="none" stroke="#C9973A" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div>
+      <div class="penalty-title">Gugatan Ganti Rugi Perdata</div>
+      <div class="penalty-text">Pemilik hak cipta dapat mengajukan gugatan perdata untuk pemulihan kerugian nyata dan hilangnya keuntungan.</div>
+    </div>
+  </div>
+  <div class="penalty-strip">
+    <div class="penalty-icon">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+        <path d="M20 4L6 10V22C6 29.5 12.5 35.5 20 38C27.5 35.5 34 29.5 34 22V10L20 4Z" stroke="#C9973A" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+        <line x1="14" y1="16" x2="26" y2="28" stroke="#C9973A" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="26" y1="16" x2="14" y2="28" stroke="#C9973A" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div>
+      <div class="penalty-title">Takedown & Pemblokiran Konten</div>
+      <div class="penalty-text">Pemerintah berwenang memblokir akses dan memerintahkan penghapusan konten yang melanggar hak cipta dari platform digital.</div>
+    </div>
+  </div>
+  <div class="penalty-strip">
+    <div class="penalty-icon">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+        <rect x="9" y="19" width="22" height="17" rx="2" stroke="#C9973A" stroke-width="1.5"/>
+        <path d="M14 19V13C14 9.7 17 7 20 7C23 7 26 9.7 26 13V19" stroke="#C9973A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <circle cx="20" cy="28" r="2.5" stroke="#C9973A" stroke-width="1.3"/>
+        <line x1="20" y1="30.5" x2="20" y2="33.5" stroke="#C9973A" stroke-width="1.3" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div>
+      <div class="penalty-title">Penyitaan & Pemusnahan</div>
+      <div class="penalty-text">Pengadilan dapat memerintahkan penyitaan dan pemusnahan seluruh salinan karya bajakan beserta alat produksinya.</div>
+    </div>
+  </div>
+
+  <p style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gold-muted);text-align:center;margin-top:16px;letter-spacing:1.5px;">
+    Dasar: UU 28/2014 Pasal 112–120
+  </p>
+</div>
+
+<!-- NOTICE FINAL -->
+<div class="section fade-in">
+  <div class="notice-final">
+    <p>
+      Semua karya yang terkandung di bawah nama <strong>Wanzz</strong> dilindungi penuh oleh hukum
+      Republik Indonesia dan hukum internasional. Penggunaan, reproduksi, distribusi, atau modifikasi
+      dalam bentuk apapun tanpa izin tertulis dari pemilik adalah <strong>pelanggaran hukum</strong>
+      yang dapat dituntut secara pidana maupun perdata.
+      <br><br>
+      Permohonan lisensi, kolaborasi, atau pertanyaan hukum dapat diajukan langsung kepada pemilik.
+      <strong>Ketidaktahuan tidak membebaskan dari tanggung jawab hukum.</strong>
+    </p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<hr class="gold-rule" style="margin-top:8px;">
+<footer>
+  <div class="footer-seal">
+    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="48" style="display:inline-block;">
+      <path d="M30 6 L36 20 L52 20 L40 30 L44 46 L30 37 L16 46 L20 30 L8 20 L24 20 Z" stroke="#C9973A" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+      <circle cx="30" cy="30" r="8" stroke="#C9973A" stroke-width="1" opacity="0.5"/>
+      <text x="30" y="34" text-anchor="middle" font-family="Cinzel,serif" font-size="9" fill="#C9973A" font-weight="700">©</text>
+    </svg>
+  </div>
+  <div class="footer-name">W A N Z Z</div>
+  <hr class="gold-rule-sm" style="max-width:200px;margin:12px auto;">
+  <div class="footer-copy">
+    © 2025 WANZZ — HAK CIPTA DILINDUNGI PENUH<br>
+    REPUBLIC OF INDONESIA · UU NO. 28 TAHUN 2014 · ALL RIGHTS RESERVED
+  </div>
+</footer>
+
+<script>
+  // Scroll fade-in
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
